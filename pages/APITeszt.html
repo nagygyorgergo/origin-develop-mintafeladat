@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IMAGEAPI</title>
+</head>
+<body>
+
+<button id="eloreGomb">Lepes elore</button>
+<button id="hatraGomb">Lepes vissza</button>
+<img id="photo" alt="Fetched Photo" />
+
+<script>
+    const fetchData = async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+
+            // Extract the URL of the photo from the JSON response
+            const photoUrl = data.photo.url;
+
+            // Get the img element by its ID
+            const photoElement = document.getElementById('photo');
+
+            // Set the src attribute of the img element to the photo URL
+            photoElement.src = photoUrl;
+            console.log('Photo URL:', photoUrl);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    const URL = 'https://api.slingacademy.com/v1/sample-data/photos/1';
+    fetchData(URL);
+
+    let szam=1;
+
+    document.getElementById('eloreGomb').addEventListener('click', () => {
+        if(szam<10){
+            szam++;
+        }
+        const URL = 'https://api.slingacademy.com/v1/sample-data/photos/' + szam;
+        fetchData(URL);
+    });
+    document.getElementById('hatraGomb').addEventListener('click', () => {
+        if(szam>1){
+            szam--;
+        }
+        const URL = 'https://api.slingacademy.com/v1/sample-data/photos/' + szam;
+        fetchData(URL);
+    });
+
+</script>
+
+</body>
+</html>
