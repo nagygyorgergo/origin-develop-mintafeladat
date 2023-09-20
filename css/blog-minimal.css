@@ -17,7 +17,7 @@
     border-radius: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
     #get-started-button {
         background: none;
         color: #a57c2a;
@@ -47,4 +47,28 @@
     .carousel-item {
         height: 25rem;
     }
+}
+
+.list-images {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.photo-data :not(h5){
+    color: rgb(128, 128, 128);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover {
+    font-weight: bold;
+    border-bottom: 2px solid #a57c2a;
 }
