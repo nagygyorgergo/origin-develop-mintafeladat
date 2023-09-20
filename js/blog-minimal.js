@@ -92,30 +92,56 @@ const fetchImageData = async (url, id) => {
 }
 
 let imageNumber = 11; //starting image index
-function nextImages(){
-    for (let i = 0; i < 5; i++) {
-        fetchImageData(URL, imageNumber);
-        imageNumber++;
-    }
-}
-nextImages(); //get default images when the page loads
-
-function previousImages(){
-    if(imageNumber>16){
-        for (let i = 6; i > 0; i--) {
-            fetchImageData(URL, imageNumber);
-            imageNumber--;
+// Add a flag to track whether a request is in progress
+let isLoading = false;
+async function getImages() {
+    if (!isLoading) {
+        isLoading = true;
+        for (let i = 0; i < 5; i++) {
+            try {
+                await fetchImageData(URL, imageNumber);
+                console.log('Fetched image:', imageNumber);
+                imageNumber++;
+            } catch (error) {
+                console.error('Error fetching image:', error);
+            }
         }
-    }
-    else{
-        console.log('Back to the beginning');
+        isLoading = false;
     }
 }
 
+// Attach event listeners
 document.getElementById('nextPage').addEventListener('click', () => {
-    nextImages();
+    getImages()
+        .then(() => {
+            console.log('All data fetched sequentially.');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });
-document.getElementById('previousPage').addEventListener('click', () => {
-    previousImages();
 
+document.getElementById('previousPage').addEventListener('click', () => {
+    if(imageNumber <= 16){
+        console.log('Back to the beginning...')
+    }
+    else {
+        imageNumber-=10;
+        getImages()
+            .then(() => {
+                console.log('All data fetched sequentially.');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
 });
+
+// Initial load
+getImages()
+    .then(() => {
+        console.log('Initial data fetched.');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
