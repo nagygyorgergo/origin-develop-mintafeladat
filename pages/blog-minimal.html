@@ -64,29 +64,28 @@
     </div>
 </nav>
 
-<!-- Content of webpage goes here -->
 <!-- Image slideshow-->
 <div id="imageSlideShow" class="carousel slide">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img id="photo1" class="d-block w-100" alt="kep1">
+            <img id="photo1" class="d-block w-100" alt="kep1" src="#">
             <div class="carousel-caption d-block">
                 <h5 id="title1">First slide label(not visible, fetched from API)</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img id="photo2" class="d-block w-100" alt="kep2">
+            <img id="photo2" class="d-block w-100" alt="kep2" src="#">
             <div class="carousel-caption d-block">
                 <h5 id="title2">Second slide label</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img id="photo0" class="d-block w-100" alt="kep0">
+            <img id="photo0" class="d-block w-100" alt="kep0" src="#">
             <div class="carousel-caption d-block">
                 <h5 id = "title0">Third slide label</h5>
             </div>
@@ -107,23 +106,37 @@
 <div class="container">
     <div class="row">
         <!-- 1st Column -->
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-5 col-sm-12">
             <div class="p-3">
-                <h2>Column 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h2>Choose what you'd like to learn from hundreds of topics.</h2>
+                <ul id="topicList" class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#">The Art of Photography: Capturing Moments in Time</a></li>
+                    <li class="list-group-item"><a href="#">Traveling Solo: Adventures and Discoveries</a></li>
+                    <li class="list-group-item"><a href="#">The Marvels of Space Exploration</a></li>
+                    <li class="list-group-item"><a href="#">The History of Classical Music</a></li>
+                    <li class="list-group-item"><a href="#">The Influence of Social Media on Communication</a></li>
+                    <li class="list-group-item"><a href="#">Exploring Sustainable Living Practices</a></li>
+                </ul>
+                <form class="form-inline">
+                    <input id="searchBar" class="mr-sm-2" type="search" placeholder="&#x1F50E;Search Topics" aria-label="Search">
+                </form>
+
             </div>
         </div>
         <!-- 2nd Column -->
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-7 col-sm-12">
             <div class="p-4">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-md-5 col-sm-12">
-                                <img class="list-images" id="listImage1" alt="listImage1">
+                                <img class="list-images" id="listImage1" alt="listImage1" src="#">
+                                <div class="spinner-border text-primary" role="status" id="loadingSpinner1">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </div>
                             <div class="col-md-7 col-sm-12 photo-data">
-                                <h5 id="listTitle1"></h5>
+                                <h5 id="listTitle1">Placeholder</h5>
                                 <p id="description1"></p>
                                 <hr>
                                 <p id="username1"></p>
@@ -133,52 +146,64 @@
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-md-5 col-sm-12">
-                                <img class="list-images" id="listImage2" alt="listImage2">
+                                <img class="list-images" id="listImage2" alt="listImage2" src="#">
                             </div>
                             <div class="col-md-7 col-sm-12 photo-data">
-                                <h5 id="listTitle2"></h5>
+                                <h5 id="listTitle2">Placeholder</h5>
                                 <p id="description2"></p>
                                 <hr>
                                 <p id="username2"></p>
                             </div>
+                            <div class="spinner-border text-primary" role="status" id="loadingSpinner2">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
                         </div>
                     </li>
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-md-5 col-sm-12">
-                                <img class="list-images" id="listImage3" alt="listImage3">
+                                <img class="list-images" id="listImage3" alt="listImage3" src="#">
                             </div>
                             <div class="col-md-7 col-sm-12 photo-data">
-                                <h5 id="listTitle3"></h5>
+                                <h5 id="listTitle3">Placeholder</h5>
                                 <p id="description3"></p>
                                 <hr>
                                 <p id="username3"></p>
                             </div>
+                            <div class="spinner-border text-primary" role="status" id="loadingSpinner3">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
                         </div>
                     </li>
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-md-5 col-sm-12">
-                                <img class="list-images" id="listImage4" alt="listImage1">
+                                <img class="list-images" id="listImage4" alt="listImage4" src="#">
                             </div>
                             <div class="col-md-7 col-sm-12 photo-data">
-                                <h5 id="listTitle4"></h5>
+                                <h5 id="listTitle4">Placeholder</h5>
                                 <p id="description4"></p>
                                 <hr>
                                 <p id="username4"></p>
                             </div>
+                            <div class="spinner-border text-primary" role="status" id="loadingSpinner4">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
                         </div>
                     </li>
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-md-5 col-sm-12">
-                                <img class="list-images" id="listImage0" alt="listImage0">
+                                <img class="list-images" id="listImage0" alt="listImage0" src="#">
                             </div>
                             <div class="col-md-7 col-sm-12 photo-data">
-                                <h5 id="listTitle0"></h5>
+                                <h5 id="listTitle0">Placeholder</h5>
                                 <p id="description0"></p>
                                 <hr>
                                 <p id="username0"></p>
+                            </div>
+                            <div class="spinner-border text-primary" role="status" id="loadingSpinner0">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
                         </div>
                         <button id="previousPage">Previous</button>

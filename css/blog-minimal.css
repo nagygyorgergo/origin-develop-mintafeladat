@@ -4,11 +4,12 @@
 
 #navbarLinks .nav-item .nav-link {
     text-decoration: none;
-    border-bottom: 2px solid transparent; /* Add a transparent border-bottom */
+    border-bottom: 2px solid transparent;
 }
+
 #navbarLinks .nav-item:hover .nav-link {
     font-weight: bold;
-    border-color: #a57c2a; /* Change the border-color on hover */
+    border-color: #a57c2a;
 }
 
 #get-started-button {
@@ -71,4 +72,50 @@ button {
 button:hover {
     font-weight: bold;
     border-bottom: 2px solid #a57c2a;
+}
+
+.spinner-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#topicList{
+    padding: 20px 0 20px 0;
+}
+
+#topicList .list-group-item::before {
+    padding-left: 0;
+    margin-left: 0;
+    content: "+";
+    color: #000000;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#topicList .list-group-item {
+    border: none;
+    padding-left: 0;
+    border-radius: 0;
+}
+
+.form-inline {
+    color: rgb(128, 128, 128);
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+#searchBar{
+    border: none;
+}
+
+#searchBar:focus{
+    border: none;
+    outline: 1px solid rgb(128, 128, 128);
 }
