@@ -1,3 +1,4 @@
+/*Style for navigation bar*/
 .navbar-brand{
     font-weight: bold;
 }
@@ -26,6 +27,7 @@
     }
 }
 
+/*Style and animation for dropdown in navbar*/
 #inspirationDropdown, #coursesDropdown{
     display: block;
     max-height: 0;
@@ -39,6 +41,7 @@
     opacity: 1;
 }
 
+/*Style for image slideshow*/
 #imageSlideShow{
     width: 88%;
     margin: 0 auto;
@@ -50,6 +53,7 @@
     }
 }
 
+/*Style for other images and image data text*/
 .list-images {
     max-width: 100%;
     height: auto;
@@ -60,6 +64,7 @@
     color: rgb(128, 128, 128);
 }
 
+/*Style for image pagination buttons*/
 button {
     background-color: transparent;
     border: none;
@@ -74,12 +79,14 @@ button:hover {
     border-bottom: 2px solid #a57c2a;
 }
 
+/*Style for loading spinner*/
 .spinner-border {
     position: absolute;
     top: 50%;
     left: 50%;
 }
 
+/*Style for topics column*/
 a{
     color: black;
     text-decoration: none;
@@ -103,7 +110,7 @@ a{
     padding-left: 0;
     border-radius: 0;
 }
-
+/*Style for search bar*/
 .form-inline {
     color: rgb(128, 128, 128);
     outline: none;
@@ -118,4 +125,49 @@ a{
 #searchBar:focus{
     border: none;
     outline: 1px solid rgb(128, 128, 128);
+}
+
+/*Style for footer elements*/
+footer{
+    background: #2b3035;
+    width: 100%;
+}
+
+.footer-content{
+    color: rgb(128, 128, 128);
+
+}
+
+.footer-content h4{
+    color: white;
+}
+
+.footer-content a{
+    color: rgb(128, 128, 128);;
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+}
+
+#footerLine{
+    width: 88%;
+    margin: 0 auto;
+}
+
+.footer-middle{
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+
+.footer-right{
+    text-align: right;
+    padding-right: 6%;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.footer-left{
+    text-align: left;
+    padding-left: 6%;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
