@@ -72,6 +72,7 @@ button {
     font-weight: normal;
     text-decoration: none;
     cursor: pointer;
+    border-bottom: 2px solid transparent;
 }
 
 button:hover {
