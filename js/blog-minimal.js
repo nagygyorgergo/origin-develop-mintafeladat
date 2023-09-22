@@ -16,8 +16,13 @@ function closeCoursesDropdown() {
     coursesDropdown.classList.remove("show");
 }
 
-// Data fetching from API for the slideshow
+// Data fetching from API for the slideshow and error message display
 const URL = 'https://api.slingacademy.com/v1/sample-data/photos/';
+function displayErrorMessage(message) {
+    const errorMessageElement = document.getElementById('errorMessage');
+    errorMessageElement.textContent = message;
+    errorMessageElement.style.display = 'block';
+}
 const fetchSlideshowData = async (url, id) => {
     try {
         const response = await fetch(url + id.toString());
@@ -39,16 +44,13 @@ const fetchSlideshowData = async (url, id) => {
         titleElement.textContent = photoTitle;
     } catch (error) {
         console.error('Error:', error);
+        displayErrorMessage('Failed to load images. Try again later.')
     }
 }
 
 let slideNumber = 4; // Initialize to starter image number
 async function getSlideshow() {
-    try {
-        await fetchSlideshowData(URL, slideNumber);
-    } catch (error) {
-        console.error('Error fetching Slideshow image:', error);
-    }
+    await fetchSlideshowData(URL, slideNumber);
 }
 
 //Adding event listeners
@@ -75,6 +77,7 @@ document.getElementById('backButton').addEventListener('click', () => {
             });
     }
 });
+
 //Fetching initial slideshow data
 getSlideshow().then(() => {
     console.log('All initial slideshow data fetched.');
@@ -83,12 +86,9 @@ getSlideshow().then(() => {
         console.error('Error:', error);
     });
 
-//Fetching data for other images
+//Fetching data for other images on the page
 const fetchImageData = async (url, id) => {
     try {
-        const loadingSpinner = document.getElementById('loadingSpinner' + (id % 5).toString());
-        loadingSpinner.style.display = 'block';
-
         const response = await fetch(url + id.toString());
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -113,22 +113,22 @@ const fetchImageData = async (url, id) => {
         descriptionElement.textContent = photoDescription;
         usernameElement.textContent = "By: " + userName;
 
-        //Disable spinner after image is loaded
-        loadingSpinner.style.display = 'none';
     } catch (error) {
         console.error('Error:', error);
+        displayErrorMessage('Failed to fetch images. Please try again later.');
     }
 }
 
 let imageNumber = 11; //starting image index
 async function getImages() {
     for (let i = 0; i < 5; i++) {
-        try {
-            await fetchImageData(URL, imageNumber);
-            imageNumber++;
-        } catch (error) {
-            console.error('Error fetching image:', error);
-        }
+        //enable spinner wile images are loading
+        const loadingSpinner = document.getElementById('loadingSpinner' + (imageNumber % 5).toString());
+        loadingSpinner.style.display = 'block';
+        await fetchImageData(URL, imageNumber);
+        imageNumber++;
+        //disable spinner
+        loadingSpinner.style.display = 'none';
     }
  }
 
@@ -145,7 +145,7 @@ document.getElementById('nextPage').addEventListener('click', () => {
 
 document.getElementById('previousPage').addEventListener('click', () => {
     if(imageNumber <= 16){
-        console.log('You are back to the beginning...')
+        console.log('You are back to the beginning of images...')
     }
     else {
         imageNumber-=10;
