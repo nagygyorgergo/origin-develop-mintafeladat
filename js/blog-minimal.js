@@ -1,9 +1,9 @@
 //Functions for navbar dropdown menu
-function inspirationShow() {
+function showInspiration() {
     const inspirationDropdown = document.getElementById("inspirationDropdown");
     inspirationDropdown.classList.toggle("show");
 }
-function closeInspirationDropdown() {
+function closeInspiration() {
     const inspirationDropdown = document.getElementById("inspirationDropdown");
     inspirationDropdown.classList.remove("show");
 }
