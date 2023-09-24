@@ -54,7 +54,7 @@ async function getSlideshow() {
 }
 
 //Adding event listeners
-document.getElementById('forwardButton').addEventListener('click', () => {
+document.getElementById('forward-button').addEventListener('click', () => {
     if (slideNumber < 6) {
         slideNumber++;
         getSlideshow().then(() => {
@@ -66,7 +66,7 @@ document.getElementById('forwardButton').addEventListener('click', () => {
     }
 });
 
-document.getElementById('backButton').addEventListener('click', () => {
+document.getElementById('back-button').addEventListener('click', () => {
     if (slideNumber > 4) {
         slideNumber--;
         getSlideshow().then(() => {
@@ -133,7 +133,7 @@ async function getImages() {
  }
 
 // Attach event listeners
-document.getElementById('nextPage').addEventListener('click', () => {
+document.getElementById('next-page').addEventListener('click', () => {
     getImages()
         .then(() => {
             console.log('All image data fetched.');
@@ -143,7 +143,7 @@ document.getElementById('nextPage').addEventListener('click', () => {
         });
 });
 
-document.getElementById('previousPage').addEventListener('click', () => {
+document.getElementById('previous-page').addEventListener('click', () => {
     if(imageNumber <= 16){
         console.log('You are back to the beginning of images...')
     }

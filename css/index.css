@@ -70,7 +70,7 @@ img{
 }
 
 /*Style for image pagination buttons*/
-button {
+#next-page, #previous-page {
     background-color: transparent;
     border: none;
     color: inherit;
@@ -80,7 +80,7 @@ button {
     border-bottom: 2px solid transparent;
 }
 
-button:hover {
+#next-page:hover, #previous-page:hover {
     font-weight: bold;
     border-bottom: 2px solid #a57c2a;
 }
