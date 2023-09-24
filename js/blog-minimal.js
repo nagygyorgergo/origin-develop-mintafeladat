@@ -1,18 +1,18 @@
 //Functions for navbar dropdown menu
 function showInspiration() {
-    const inspirationDropdown = document.getElementById("inspirationDropdown");
+    const inspirationDropdown = document.getElementById("inspiration-dropdown");
     inspirationDropdown.classList.toggle("show");
 }
 function closeInspiration() {
-    const inspirationDropdown = document.getElementById("inspirationDropdown");
+    const inspirationDropdown = document.getElementById("inspiration-dropdown");
     inspirationDropdown.classList.remove("show");
 }
 function coursesShow() {
-    const coursesDropdown = document.getElementById("coursesDropdown");
+    const coursesDropdown = document.getElementById("courses-dropdown");
     coursesDropdown.classList.toggle("show");
 }
 function closeCoursesDropdown() {
-    const coursesDropdown = document.getElementById("coursesDropdown");
+    const coursesDropdown = document.getElementById("courses-dropdown");
     coursesDropdown.classList.remove("show");
 }
 

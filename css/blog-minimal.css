@@ -3,12 +3,12 @@
     font-weight: bold;
 }
 
-#navbarLinks .nav-item .nav-link {
+.nav-item .nav-link {
     text-decoration: none;
     border-bottom: 2px solid transparent;
 }
 
-#navbarLinks .nav-item:hover .nav-link {
+.nav-item:hover .nav-link:not(#get-started-button) {
     font-weight: bold;
     border-color: #a57c2a;
 }
@@ -28,7 +28,7 @@
 }
 
 /*Style and animation for dropdown in navbar*/
-#inspirationDropdown, #coursesDropdown{
+#inspiration-dropdown, #courses-dropdown{
     display: block;
     max-height: 0;
     opacity: 0;
@@ -36,7 +36,7 @@
     transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
-#inspirationDropdown.show, #coursesDropdown.show{
+#inspiration-dropdown.show, #courses-dropdown.show{
     max-height: 500px;
     opacity: 1;
 }
@@ -47,7 +47,7 @@ img{
     height: auto;
 }
 
-#imageSlideShow{
+#image-slideShow{
     width: 88%;
     margin: 0 auto;
 }
@@ -98,11 +98,11 @@ a{
     text-decoration: none;
 }
 
-#topicList{
+#topic-list{
     padding: 20px 0 20px 0;
 }
 
-#topicList .list-group-item::before {
+#topic-list .list-group-item::before {
     padding-left: 0;
     margin-left: 0;
     content: "+";
@@ -111,11 +111,12 @@ a{
     margin-right: 10px;
 }
 
-#topicList .list-group-item {
+#topic-list .list-group-item {
     border: none;
     padding-left: 0;
     border-radius: 0;
 }
+
 /*Style for search bar*/
 .form-inline {
     color: rgb(128, 128, 128);
@@ -124,13 +125,13 @@ a{
     text-decoration: none;
 }
 
-#searchBar{
+#search-bar{
     border: none;
 }
 
-#searchBar:focus{
-    border: none;
-    outline: 1px solid rgb(128, 128, 128);
+#search-bar:focus{
+    border: 1px solid rgb(128, 128, 128);
+    outline: none;
 }
 
 /*Style for footer elements*/
@@ -154,7 +155,11 @@ footer{
     padding: 0 10px 0 10px;
 }
 
-#footerLine{
+.footer-content a:hover{
+    color: white;
+}
+
+#footer-line{
     width: 88%;
     margin: 0 auto;
 }

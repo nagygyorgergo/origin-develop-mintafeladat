@@ -31,7 +31,7 @@
                     <a onclick="showInspiration()" onblur="closeInspiration()" class="nav-link dropdown-toggle" href="#" role="button">
                         Inspiration
                     </a>
-                    <div class="dropdown-menu" id="inspirationDropdown">
+                    <div class="dropdown-menu" id="inspiration-dropdown">
                         <a class="dropdown-item" href="#">Inspiration 1</a>
                         <a class="dropdown-item" href="#">Inspiration 2</a>
                         <a class="dropdown-item" href="#">Inspiration 3</a>
@@ -41,7 +41,7 @@
                     <a onclick="coursesShow()" onblur="closeCoursesDropdown()" class="nav-link dropdown-toggle" href="#" role="button">
                         Courses
                     </a>
-                    <div class="dropdown-menu" id="coursesDropdown">
+                    <div class="dropdown-menu" id="courses-dropdown">
                         <a class="dropdown-item" href="#">Course A</a>
                         <a class="dropdown-item" href="#">Course B</a>
                         <a class="dropdown-item" href="#">Course C</a>
@@ -63,9 +63,14 @@
         </div>
     </div>
 </nav>
+<!-- Navbar end -->
+
+<div class="alert alert-danger" id="errorMessage" style="display: none;">
+    <!-- Error message content will be inserted here -->
+</div>
 
 <!-- Image slideshow-->
-<div id="imageSlideShow" class="carousel slide">
+<div id="image-slideShow" class="carousel slide">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -91,11 +96,11 @@
             </div>
         </div>
     </div>
-    <button id="backButton" class="carousel-control-prev" type="button" data-bs-target="#imageSlideShow" data-bs-slide="prev">
+    <button id="backButton" class="carousel-control-prev" type="button" data-bs-target="#image-slideShow" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button id="forwardButton" class="carousel-control-next" type="button" data-bs-target="#imageSlideShow" data-bs-slide="next">
+    <button id="forwardButton" class="carousel-control-next" type="button" data-bs-target="#image-slideShow" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -109,7 +114,7 @@
         <div class="col-md-5 col-sm-12">
             <div class="p-3">
                 <h2>Choose what you'd like to learn from hundreds of topics.</h2>
-                <ul id="topicList" class="list-group list-group-flush">
+                <ul id="topic-list" class="list-group list-group-flush">
                     <li class="list-group-item"><a href="#">The Art of Photography: Capturing Moments in Time</a></li>
                     <li class="list-group-item"><a href="#">Traveling Solo: Adventures and Discoveries</a></li>
                     <li class="list-group-item"><a href="#">The Marvels of Space Exploration</a></li>
@@ -118,15 +123,12 @@
                     <li class="list-group-item"><a href="#">Exploring Sustainable Living Practices</a></li>
                 </ul>
                 <form class="form-inline">
-                    <input id="searchBar" class="mr-sm-2" type="search" placeholder="&#x1F50E;Search Topics" aria-label="Search">
+                    <input id="search-bar" class="mr-sm-2" type="search" placeholder="&#x1F50E;Search Topics" aria-label="Search">
                 </form>
             </div>
         </div>
         <!-- 2nd Column -->
         <div class="col-md-7 col-sm-12">
-            <div class="alert alert-danger" id="errorMessage" style="display: none;">
-                <!-- Error message content will be inserted here -->
-            </div>
             <div class="p-4">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
@@ -235,10 +237,10 @@
             <a href="#">Ln</a>
         </div>
 
-        <hr id="footerLine">
+        <hr id="footer-line">
 
         <div class="col-md-4 col-sm-12 footer-left">
-            <p>6700 Szeged, Mars tér 8.</p>
+            <p>6700 Szeged, Mars tér 13.</p>
         </div>
         <div class="col-md-4 col-sm-12">
         </div>
